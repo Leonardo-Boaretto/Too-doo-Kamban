@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Too-doo Kamban - Organizador de Tarefas</title>
+    <link rel="stylesheet" href="complet.css">
+    <script src="https://unpkg.com/@motionone/core"></script>
+    <script src="complet.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <button id="back-to-welcome" class="btn btn-ghost">
+                <span class="btn-icon">⬅️</span>
+                Voltar
+            </button>
+            <nav class="nav-menu">
+                <button id="todo-view-btn" class="nav-btn active">Lista de Tarefas</button>
+                <button id="kanban-view-btn" class="nav-btn">Kanban</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Lista de Tarefas View -->
+        <section id="todo-view" class="view-section active">
+            <div class="view-header">
+                <h2>Lista de Tarefas</h2>
+                <button id="add-task-btn" class="add-btn">
+                    <span>+ Nova Tarefa</span>
+                </button>
+            </div>
+            <div id="todo-list" class="todo-list">
+                
+            </div>
+        </section>
+
+        <section id="kanban-view" class="view-section">
+            <div class="view-header">
+                <h2>Quadro Kanban</h2>
+                <button id="add-kanban-task-btn" class="add-btn">
+                    <span>+ Nova Tarefa</span>
+                </button>
+            </div>
+            <div class="kanban-board">
+                <div class="kanban-column" data-status="todo">
+                    <div class="column-header">
+                        <h3>A Fazer</h3>
+                        <span class="task-count">0</span>
+                    </div>
+                    <div class="column-content" id="todo-column">
+                    </div>
+                </div>
+                <div class="kanban-column" data-status="in-progress">
+                    <div class="column-header">
+                        <h3>Em Progresso</h3>
+                        <span class="task-count">0</span>
+                    </div>
+                    <div class="column-content" id="in-progress-column">
+                    </div>
+                </div>
+                <div class="kanban-column" data-status="done">
+                    <div class="column-header">
+                        <h3>Concluído</h3>
+                        <span class="task-count">0</span>
+                    </div>
+                    <div class="column-content" id="done-column">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Nova Tarefa</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <form id="task-form" class="task-form">
+                <div class="form-group">
+                    <label for="task-title">Título da Tarefa</label>
+                    <input type="text" id="task-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Descrição</label>
+                    <textarea id="task-description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="task-priority">Prioridade</label>
+                    <select id="task-priority">
+                        <option value="low">Baixa</option>
+                        <option value="medium">Média</option>
+                        <option value="high">Alta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="task-status">Status</label>
+                    <select id="task-status">
+                        <option value="todo">A Fazer</option>
+                        <option value="in-progress">Em Progresso</option>
+                        <option value="done">Concluído</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-task" class="cancel-btn">Cancelar</button>
+                    <button type="submit" id="save-task" class="save-btn">Salvar Tarefa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirmar Exclusão</h3>
+                <button id="close-delete-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir esta tarefa?</p>
+                <div class="form-actions">
+                    <button id="cancel-delete" class="cancel-btn">Cancelar</button>
+                    <button id="confirm-delete" class="delete-btn">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="complet.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Too-doo Simples - Lista de Tarefas</title>
+    <link rel="stylesheet" href="simple.css">
+    <script src="https://unpkg.com/@motionone/core"></script>
+</head>
+<body>
+    <div class="simple-container">
+        <header class="simple-header">
+            <div class="header-content">
+                <button id="back-btn" class="btn btn-ghost">
+                    <span class="btn-icon">⬅️</span>
+                    Voltar
+                </button>
+                <h1 class="simple-title">📝 Too-doo Simples</h1>
+                <div class="header-spacer"></div>
+            </div>
+        </header>
+
+        <main class="simple-main">
+            <div class="add-task-section">
+                <div class="input-group">
+                    <input type="text" id="new-task-input" placeholder="Digite uma nova tarefa..." class="task-input">
+                    <button id="add-task-btn" class="btn btn-primary">
+                        <span class="btn-icon">➕</span>
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <div id="tasks-list" class="tasks-list"></div>
+
+                <div id="empty-state" class="empty-state-simple">
+                    <div class="empty-icon">📝</div>
+                    <h3>Nenhuma tarefa ainda</h3>
+                    <p>Adicione sua primeira tarefa acima!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="simple.js"></script>
+</body>
+</html>
